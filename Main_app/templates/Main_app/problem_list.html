@@ -1,0 +1,20 @@
+{% extends './base.html'%}
+{% block content %}
+    <table class="table">
+        <tr>
+            <th>Problem Name</th>
+            <th>Number of Submissions</th>
+            <th>Number of accepted</th>
+        </tr>
+        {%for problem in problem_list%}
+        <tr>
+            <td><h3><a href="/Main_app/{{problem.pk}}">{{problem.Title}}</a></h3></td>
+            <td>{{problem.Number_of_submissions}}</td>
+            <td>{{problem.Number_of_accepted}}</td>
+        </tr>
+        
+        {% endfor%}
+    </table>
+
+{% endblock %}
+

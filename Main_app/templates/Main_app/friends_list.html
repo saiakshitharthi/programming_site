@@ -1,0 +1,9 @@
+{% extends './base.html' %}
+
+{% block content%}
+    {% for friend in friends%}
+        {{friend.user2}}
+        <br>
+    {% endfor%}
+
+{% endblock%}

@@ -1,0 +1,22 @@
+{%extends './base.html' %}
+{% block content %}
+    <table class="table">
+        <tr>
+            <th>Problem Id</th>
+            <th>Problem Name</th>
+            <th>isAccepted?</th>
+            <th>submitted User</th>
+
+        </tr>
+        {%for submission in submission_list%}
+        <tr>
+
+            <td>{{submission.id}}</td>
+            <td>{{submission.problem.Title}}</td>
+            <td>{{submission.accepted}}</td>
+            <td>{{submission.user}}</td>
+        </tr>
+        
+        {% endfor%}
+    </table>
+{% endblock %}

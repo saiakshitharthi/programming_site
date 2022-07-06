@@ -1,0 +1,27 @@
+{%extends './base.html' %}
+{% block content %}
+   {%if is_friend%}
+      Friends!!
+   {% endif%}
+   <h1>{{user.user.username}}</h1>
+   <form action="{{request.path}}" method="post">
+      
+      {% csrf_token%}
+      {{form}}
+      <input type="submit" value="submit">
+      
+   </form>
+   <h5>Name: {{user.user.first_name}} {{user.user.last_name}}</h5>
+   <h5>Points: {{user.points}}</h5>
+   
+   <h4>Solved Problems:</h4>
+   <br>
+
+   <br>
+   {% for submission in user.user.submissions.all%}
+      
+      <h4>{{submission.problem.Title}}</h4>
+   {%endfor%}
+   
+   
+{% endblock %}

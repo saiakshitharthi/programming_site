@@ -1,0 +1,11 @@
+{% extends './base.html'%}
+{% block content %}
+<h4>Your Solution:</h4>
+<p>{{submission.solution|linebreaks}}</p>
+<h4>Your status:</h4>
+{% if submission.accepted%}
+<p>Accepted !!</p>
+{% else%}
+<p>Rejected !!</p>
+{% endif%}
+{% endblock %}
